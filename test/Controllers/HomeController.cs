@@ -1,5 +1,5 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using test.Models;
 
 namespace test.Controllers
@@ -15,7 +15,8 @@ namespace test.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var products = DI.GetProducts(); // L?y t? DI t?nh
+            return View(products);
         }
 
         public IActionResult Privacy()
